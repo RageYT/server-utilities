@@ -1,3 +1,3 @@
-Config = {}
+config = {}
 
-Config.Server = "^4[Server] ^7"
+config.prefix = "^4[^1Server^4] ^7"
