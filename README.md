@@ -1,5 +1,4 @@
 # Server Utilities - A Set of Server Tools
----
 Hello all once again, after releasing my **Simple Announcements** resource, I thought I'd might as well share my other resource, Server Utilities. It consists of some basic and simple scripts for you're server that allow you to get easier access to things you wouldn't be able to without a trainer or such. This is my second script/resource and many more to come, so I greatly appreciate all the support and criticisms from you which helps me make my resources better.
 
 Currently, the resource only has commands but I do hope to include more such as NoClip and some other fun stuff.
@@ -7,7 +6,6 @@ Currently, the resource only has commands but I do hope to include more such as 
 There isn't any need for pictures, so I won't provide them as the list of commands below explains what they do.
 
 ## Current Features/Commands
----
 - /cc - Clears all of chat and removing any commands left in the history
 - /weapon [weapon_hash] - Provides the player with a weapon
 - /ammo - Alongside the **/weapon** command, this provides ammo for the current weapon in hand
@@ -16,7 +14,6 @@ There isn't any need for pictures, so I won't provide them as the list of comman
 - /dv - Deletes the vehicle the player is in.
 
 ## Possible Features/Commands
----
 - /tp [player ID] - A teleport command to teleport you to a player anywhere in the world
 - /tpme [player ID] - Teleports a specified player to you're current location
 - /tpcoords [x, y, z] - Will teleport you to the specified coordinates
@@ -29,7 +26,6 @@ There isn't any need for pictures, so I won't provide them as the list of comman
 If you have anymore ideas, please do share them or if you even want to contribute go ahead and make a pull request. You're idea doesn't have to be command based, it can be something unrelated to command but rather a feature like NoClip.
 
 ## Easy Installation Guide
----
 Installing is as simple as downloading and throwing into your resource folder, but some may not find it easy.
 
 1. Download the latest release via [GitHub](https://github.com/RageYT/server-utilities/releases/latest)
