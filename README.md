@@ -1,7 +1,7 @@
-# Server Utilites | A Basic Set of Commands
-Server Utilities is a simplified resource that offers administrator rights and basic player commands. While offering not many commands, I hope to expand it as time moves on.
+# Server Utilites | A Basic Set of Server Utilites
+Server Utilities is a simplified resource that offers staff tools and basic player commands. While offering not many commands, I hope to expand it as time moves on and include non-command based features such as NoClip.
 
-## Current Features
+## Current Commands
 - /cc - Clears all of chat and removing any commands left in the history
 - /weapon {weapon_has} - Provides the player with a weapon
 - /ammo - Alongside the **/weapon** command, this provides ammo for the current weapon in hand
@@ -9,7 +9,7 @@ Server Utilities is a simplified resource that offers administrator rights and b
 - /vehicle {vehicle model} - Spawns a vehicle with the specified model
 - /dv - Deletes the vehicle the player is in.
 
-## Possible Features
+## Possible Commands
 - /tp {player ID} - A teleport command to teleport you to a player anywhere in the world
 - /tpme {player ID} - Teleports a specified player to you're current location
 - /tpcoords {x, y, z} - Will teleport you to the specified coordinates
