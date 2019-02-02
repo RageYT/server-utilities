@@ -7,7 +7,7 @@ Server Utilities is a simplified resource that offers administrator rights and b
 - /ammo - Alongside the **/weapon** command, this provides ammo for the current weapon in hand
 - /suicide - Self explanatory but kills yourself and respawns you
 - /vehicle {vehicle model} - Spawns a vehicle with the specified model
-- /dv - Deletes the vehicle the player is closest to or deletes it if the player is in a vehicle
+- /dv - Deletes the vehicle the player is in.
 
 ## Possible Features
 - /tp {player ID} - A teleport command to teleport you to a player anywhere in the world
