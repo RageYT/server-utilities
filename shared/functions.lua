@@ -1,4 +1,4 @@
 function clearChat()
     TriggerEvent('chat:clear')
-    TriggerEvent('server-utilities:Notify_Standard', 'The chat has been cleared, as well as any command history.')
+    TriggerEvent('server-utilities:Notify_Standard', _('clear_chat_success'))
 end

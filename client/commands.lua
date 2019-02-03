@@ -1,5 +1,3 @@
-local prefix = config.prefix
-
 -- Basic Commands
 
 RegisterCommand("cc", function() 
@@ -9,9 +7,14 @@ end)
 RegisterCommand("suicide", function()
     local player = GetPlayerPed(-1)
 
+    RequestAnimDict('mp_suicide')
+    while not HasAnimDictLoaded('mp_suicide') do Wait(0) end
+
+    TaskPlayAnim(player, 'mp_suicide', 'pill', 8.0, 1.0, 5000, 0, 1, true, true, true)
+    Wait(4600)
     SetEntityHealth(player, 0)
-    Citizen.Wait(4500)
-    TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_PLANESITE', 1, 'Epsilon', 'Suicidal Prevention', 'Kifflom, it seems as if you tried to take your own life. No worries we are here to help.')
+    Wait(4500)
+    TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_PLANESITE', 1, 'Epsilon', 'Suicidal Prevention', _('epsilon_suicide_message'))
 end)
 
 RegisterCommand("ammo", function(source, args)
@@ -22,12 +25,12 @@ RegisterCommand("ammo", function(source, args)
     if GetWeaponClipSize(weapon) > 0 then
         if count then
             AddAmmoToPed(player, weapon, tonumber(count))
-            TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Ammo Delivery', 'Need some ammo? Here I have a cache of ammo, have some.')
+            TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Ammo Delivery', _('weapon_dealer_ammo_success'))
         else
-            TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Ammo Delivery', 'I need an amount, how much do you want damnit?')
+            TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Ammo Delivery', _('weapon_dealer_ammo_invalid'))
         end
     else
-        TriggerEvent('server-utilities:Notify_Standard', 'This weapon does not need ammo.')
+        TriggerEvent('server-utilities:Notify_Standard', _('weapon_dealer_ammo_nonweap'))
     end
 end)
 
@@ -38,8 +41,8 @@ RegisterCommand("dv", function()
     if IsPedSittingInAnyVehicle(player) then
         SetEntityAsMissionEntity(curVehicle, true, true)
         DeleteEntity(vehicle)
-        TriggerEvent('server-utilities:Notify_Standard', 'The vehicle has been successfully deleted.')
+        TriggerEvent('server-utilities:Notify_Standard', _('delete_vehicle_success'))
     else
-        TriggerEvent('server-utilities:Notify_Standard', 'You must be in a vehicle to do this.')
+        TriggerEvent('server-utilities:Notify_Standard', _('delete_vehicle_error'))
     end
 end)

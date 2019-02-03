@@ -3,6 +3,7 @@
 -- need to be touched or edited
 --===============================
 config = {}
+config.locale = 'en'
 
 --======================================================================================================================
 -- The ^ are for color coding, if you want to change the colors use the color codes below; Thanks to Auxi for the guide
@@ -35,3 +36,5 @@ config.weapons = {
     pistol = "weapon_pistol",
     carbinerifle = "weapon_carbinerifle"
 }
+
+selectLocale(config.locale)

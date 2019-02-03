@@ -4,7 +4,7 @@
 --======================================================================
 RegisterNetEvent('server-utilities:Notify_Standard')
 AddEventHandler('server-utilities:Notify_Standard', function(notification_message)
-    SetNotificationTextEntry('STRING')
+    SetNotificationTextEntry("STRING")
     AddTextComponentSubstringWebsite(notification_message)
     DrawNotification(false, true)
 end)
@@ -40,10 +40,10 @@ AddEventHandler('server-utilities:giveWeapon', function(weaponName)
     -- If the weapon name provided by the player is in the config.weapons table, it will continue otherwise return an error
     if weapons[weaponName] then
         local weapon = weapons[weaponName]
-        TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Weapon Delivery', 'Heres your new weapon, enjoy and take care of it now.')
+        TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Weapon Delivery', _('weapon_dealer_weap_success'))
         GiveWeaponToPed(player, weapon, 0, false, true)
     else
-        TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Weapon Delivery', 'What kind of weapon do you want? I need a valid weapon.')
+        TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Weapon Delivery', _('weapon_dealer_weap_invalid'))
     end
 end)
 
