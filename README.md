@@ -22,6 +22,7 @@ There isn't any need for pictures, so I won't provide them as the list of comman
 - NoClip - Allowing the player to fly around the world without any collision to objects
 - Admin Chat Only - Only groups or admins with an ace can type in chat
 - Menu Based - Commands and Features possibly in a menu?
+- Ads w/Image Notifications - Basic simple ads with image based notifications
 
 If you have anymore ideas, please do share them or if you even want to contribute go ahead and make a pull request. You're idea doesn't have to be command based, it can be something unrelated to command but rather a feature like NoClip.
 
