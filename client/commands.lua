@@ -1,36 +1,17 @@
-local server = config.prefix
+local prefix = config.prefix
 
 -- Basic Commands
 
 RegisterCommand("cc", function() 
-    cc()
+    clearChat()
 end)
 
 RegisterCommand("suicide", function()
     local player = GetPlayerPed(-1)
 
     SetEntityHealth(player, 0)
-end)
-
-RegisterCommand("weapon", function(source, args)
-    local weapon = args[1]
-    local player = GetPlayerPed(-1)
-
-    if args[1] then
-        if IsWeaponValid(weapon) then
-            TriggerEvent('chat:addMessage', {
-                args = { server .. 'The weapon ^3' .. weapon .. ' ^7has been given to you.'}})
-            GiveWeaponToPed(player, weapon, 0, false, true)
-        else
-            TriggerEvent('chat:addMessage', {
-                args = { server .. "This is not a valid weapon hash."}
-            })
-        end
-    else
-        TriggerEvent('chat:addMessage', {
-            args = { server .. ' ^7You have been given the default weapon.'}})
-        GiveWeaponToPed(player, 'weapon_knife', 0, false, true)
-    end
+    Citizen.Wait(4500)
+    TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_PLANESITE', 1, 'Epsilon', 'Suicidal Prevention', 'Kifflom, it seems as if you tried to take your own life. No worries we are here to help.')
 end)
 
 RegisterCommand("ammo", function(source, args)
@@ -39,56 +20,26 @@ RegisterCommand("ammo", function(source, args)
     local found,weapon = GetCurrentPedWeapon(GetPlayerPed(-1), true)
 
     if GetWeaponClipSize(weapon) > 0 then
-        if args[1] then
+        if count then
             AddAmmoToPed(player, weapon, tonumber(count))
-            TriggerEvent('chat:addMessage', {
-                args = { server .. 'You have been given ^3' .. count .. ' ^7ammo for your current weapon.'}
-            })
+            TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Ammo Delivery', 'Need some ammo? Here I have a cache of ammo, have some.')
         else
-            TriggerEvent('chat:addMessage', {
-                args = { server .. 'Please enter a valid amount.'}
-            })
+            TriggerEvent('server-utilities:Notify_Advanced', 'CHAR_ARTHUR', 1, 'Annonymous', 'Ammo Delivery', 'I need an amount, how much do you want damnit?')
         end
     else
-        TriggerEvent('chat:addMessage', {
-            args = { server .. 'This weapon does not require ammo.'}})
-    end
-end)
-
-RegisterCommand("vehicle", function(source, args)
-    local player = GetPlayerPed(-1)
-    local vehicle = args[1]
-    local coords = GetEntityCoords(player, true)
-
-    RequestModel(vehicle)
-    while not HasModelLoaded(vehicle) do Citizen.Wait(0) end
-
-    local heading = GetEntityHeading(player)
-    local spawnedVeh = CreateVehicle(vehicle, coords, heading, false, false)
-    if args[1] then
-        if IsPedSittingInAnyVehicle(player) then
-            local curVehicle = GetVehiclePedIsIn(player, false)
-            DeleteEntity(curVehicle)
-            SetPedIntoVehicle(player, spawnedVeh, -1)
-            SetModelAsNoLongerNeeded(vehicle)
-        else
-            SetPedIntoVehicle(player, spawnedVeh, -1)
-            SetModelAsNoLongerNeeded(vehicle)
-        end
+        TriggerEvent('server-utilities:Notify_Standard', 'This weapon does not need ammo.')
     end
 end)
 
 RegisterCommand("dv", function()
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-    --local coords = GetEntityCoords(GetPlayerPed(-1), true)
     local player = GetPlayerPed(-1)
 
     if IsPedSittingInAnyVehicle(player) then
+        SetEntityAsMissionEntity(curVehicle, true, true)
         DeleteEntity(vehicle)
+        TriggerEvent('server-utilities:Notify_Standard', 'The vehicle has been successfully deleted.')
     else
-        --ClearAreaOfVehicles(coords, 100.0, false, false, false, false, false)
-        TriggerEvent('chat:addMessage', {
-            args = { server .. " You must be in a vehicle to do this." }
-        })
+        TriggerEvent('server-utilities:Notify_Standard', 'You must be in a vehicle to do this.')
     end
 end)
