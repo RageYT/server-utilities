@@ -26,4 +26,4 @@ RegisterCommand('ad', function(source, args, raw)
     local message = raw:sub(cut_index, raw:len())
     
     TriggerClientEvent('server-utilities:Notify_Advanced', -1, ad_image, 1, ad_name, 'Advertisement', message)
-end)
+end, true)
