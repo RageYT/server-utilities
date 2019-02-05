@@ -1,4 +1,4 @@
--- Basic Commands
+-- Client sided commands
 
 RegisterCommand("cc", function() 
     clearChat()

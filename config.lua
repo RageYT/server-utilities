@@ -1,8 +1,13 @@
---===============================
--- Leave this as is, it does not
--- need to be touched or edited
---===============================
+--============================================================
+-- Leave this as is, it does not need to be touched or edited
+--============================================================
 config = {}
+
+--=============================================================
+-- Selects a locale file from the locales folder. If you would
+-- like to create one and include it within the resource, make
+-- a pull request on the GitHub with a translate version.
+--=============================================================
 config.locale = 'en'
 
 --======================================================================================================================
@@ -17,8 +22,7 @@ config.locale = 'en'
 -- ^5 is Light Blue (#33b5e5)
 -- ^6 is Purple (#aa66cc)
 -- ^7 is White
---=============================
-
+--============================
 config.prefix = "^4[^1Server^4] ^7"
 
 --=====================================================================================
@@ -29,12 +33,25 @@ config.prefix = "^4[^1Server^4] ^7"
 --=====================================================================================
 -- Example:
 -- carbinerifle = "weapon_carbinerifle",
---===================================
-
+--=======================================
 config.weapons = {
     assaultrifle = "weapon_assaultrifle",
     pistol = "weapon_pistol",
     carbinerifle = "weapon_carbinerifle"
 }
 
+--===========================================================================
+-- The list of ads are provided below, providing custom made
+-- ads for different things. Use the example provided to make you're own ad.
+--===========================================================================
+-- To add you're own ad, refer to the wiki page on how to create one.
+-- https://github.com/RageYT/server-utilities/wiki/Guides#adding-new-ads
+--=======================================================================
+config.ads = {
+    cab = { 'CHAR_TAXI', 'Downtown Cab Co.' }
+}
+
+--==========================================================
+-- Leave this be, it autoselects the set locale from above.
+--==========================================================
 selectLocale(config.locale)
