@@ -36,7 +36,10 @@ Installing is as simple as downloading and throwing into your resource folder, b
 
 > start server-utilites
 
-https://github.com/RageYT/server-utilities
+5. In the resource folder, locate the **perms_file.cfg** file and put that where you're **server.cfg** file is located.
+6. In you're **server.cfg** file add the line below into it.
+
+> exec perms_file.cfg
 
 If you would like to restrict the commands to only certain groups such as admin or superadmin, add the following into you're **server.cfg** file.
 
